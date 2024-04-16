@@ -1,8 +1,14 @@
 /* global AutoForm */
 import { Tracker } from 'meteor/tracker'
+import './utility.js'
+import './autoform-validation.js'
+import './autoform-hooks.js'
+import './autoform-inputs.js'
+import './autoform-api.js'
 import { FormPreserve } from './form-preserve'
 import { FormData } from './autoform-formdata'
 import { ArrayTracker } from './autoform-arrays'
+
 
 AutoForm = AutoForm || {} // eslint-disable-line no-global-assign
 

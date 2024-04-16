@@ -1,6 +1,5 @@
 import { Template } from 'meteor/templating'
 import { isFunction } from './common'
-
 /* global arrayTracker, AutoForm */
 
 function parseOptions (options, helperName, skipSchema) {

@@ -1,5 +1,6 @@
 /* global moment */
 import { Utility } from '../utility'
+import { moment } from 'meteor/momentjs:moment'
 
 const isDate = d => Object.prototype.toString.call(d) === '[object Date]'
 const toTrimmedString = s => s.trim()

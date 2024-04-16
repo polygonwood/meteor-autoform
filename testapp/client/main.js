@@ -15,10 +15,11 @@ const schema = new SimpleSchema({
   age: {
     type: Number,
     min: 18,
-    max: 120,
+    max: () => {
+      const name = AutoForm.getFieldValue('name')
+      return name === 'Jan' ? 999 : 100
+    },
     autoform: {
-      min: 18,
-      max: 120,
       defaultValue: 18,
     }
   }
