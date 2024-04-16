@@ -8,7 +8,7 @@ Package.describe({
 })
 
 Package.onUse(function (api) {
-  api.versionsFrom(['1.3', '2.7.3', '3.0-alpha.19'])
+  api.versionsFrom(['2.8.0', '3.0-beta.0'])
 
   // Dependencies
   api.use(
@@ -24,7 +24,6 @@ Package.onUse(function (api) {
       'random',
       'ecmascript',
       'mongo',
-      'momentjs:moment@2.10.6'
     ],
     'client'
   )
@@ -33,6 +32,7 @@ Package.onUse(function (api) {
 
   api.use(
     [
+      'momentjs:moment@2.10.6',
       'mrt:moment-timezone@0.2.1',
       'aldeed:collection2-core@2.0.0',
       'aldeed:collection2@3.0.0',
