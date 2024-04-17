@@ -9,9 +9,7 @@ Package.describe({
 
 Npm.depends({
   'mongo-object': '3.0.1',
-  //'message-box': '0.2.7',
-  //'clone': '2.1.2'
-});
+})
 
 Package.onUse(function (api) {
   api.versionsFrom(['2.8.0', '3.0-beta.0'])
@@ -38,6 +36,7 @@ Package.onUse(function (api) {
       'mrt:moment-timezone@0.2.1',
       'aldeed:collection2@4.0.0',
       'aldeed:simple-schema@2.0.0-beta300.0',
+      'aldeed:collection2@3.0.0 || 4.0.0',
       'aldeed:moment-timezone@0.4.0',
       'reload'
     ],
