@@ -1,4 +1,4 @@
-/* global moment */
+/* global AutoForm, moment */
 import { Utility } from '../utility'
 import { moment } from 'meteor/momentjs:moment'
 

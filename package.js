@@ -8,27 +8,24 @@ Package.describe({
 })
 
 Npm.depends({
-  'mongo-object': '3.0.1',
+  'mongo-object': '3.0.1'
 })
 
 Package.onUse(function (api) {
-  api.versionsFrom(['2.8.0', '3.0-beta.0'])
+  api.versionsFrom(['2.8.0', '3.0-rc.0'])
 
   // Dependencies
   api.use([
-      'livedata',
-      'deps',
-      'templating@1.4.3',
-      'ejson',
-      'blaze',
-      'reactive-var',
-      'reactive-dict',
-      'random',
-      'ecmascript',
-      'mongo'
-    ])
-
-  api.use('jquery@1.11.10 || 3.0.0', 'client')
+    'templating',
+    'ejson',
+    'blaze',
+    'reactive-var',
+    'reactive-dict',
+    'random',
+    'ecmascript',
+    'mongo',
+    'jquery'
+  ])
 
   api.use(
     [
@@ -36,7 +33,6 @@ Package.onUse(function (api) {
       'mrt:moment-timezone@0.2.1',
       'aldeed:collection2@4.0.0',
       'aldeed:simple-schema@2.0.0-beta300.0',
-      'aldeed:collection2@3.0.0 || 4.0.0',
       'aldeed:moment-timezone@0.4.0',
       'reload'
     ],
@@ -65,6 +61,7 @@ Package.onUse(function (api) {
 })
 
 Package.onTest(function (api) {
+  api.versionsFrom(['2.8.0', '3.0-rc.0'])
   // Running the tests requires a dummy project in order to
   // resolve npm dependencies and the test env dependencies.
   api.use([
@@ -72,10 +69,10 @@ Package.onTest(function (api) {
     'random',
     'tracker',
     'blaze',
-    'templating@1.4.3',
+    'templating@1.4.3 || 1.4.4-alpha300.17',
     'mongo',
-    'meteortesting:mocha',
-    'meteortesting:browser-tests',
+    'meteortesting:mocha@3.1.0-beta300.0',
+    'aldeed:collection2@4.0.2-beta.1',
     'momentjs:moment@2.30.1'
   ])
   api.use([
@@ -84,5 +81,21 @@ Package.onTest(function (api) {
     'aldeed:simple-schema@2.0.0-beta300.0'
   ], 'client')
 
-  api.addFiles('tests/testSuite.tests.js', 'client');
+  api.addFiles([
+    'tests/setup.tests.js',
+    'tests/utility.tests.js',
+    'tests/common.tests.js',
+    'tests/FormPreserve.tests.js',
+    'tests/FormData.tests.js',
+    'tests/Hooks.tests.js',
+    'tests/ArrayTracker.tests.js',
+    'tests/autoform-inputs.tests.js',
+    'tests/autoform-helpers.tests.js',
+    'tests/autoform-validation.tests.js',
+    'tests/autoform-api.tests.js',
+    // component specific
+    'tests/components/quickForm/quickFormUtils.tests.js',
+    // input types
+    'tests/inputTypes/value-converters.tests.js'
+  ], 'client');
 })
