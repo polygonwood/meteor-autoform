@@ -16,15 +16,15 @@ Package.onUse(function (api) {
 
   // Dependencies
   api.use([
-    'templating',
     'ejson',
-    'blaze',
     'reactive-var',
     'reactive-dict',
     'random',
     'ecmascript',
     'mongo',
-    'jquery'
+    'blaze@2.9.0 || 3.0.0-alpha300.17',
+    'templating@1.4.3 || 1.4.4-alpha300.17',
+    'jquery@3.0.0 || 3.0.1-alpha300.19'
   ])
 
   api.use(
@@ -68,7 +68,7 @@ Package.onTest(function (api) {
     'ecmascript',
     'random',
     'tracker',
-    'blaze',
+    'blaze@2.9.0 || 3.0.0-alpha300.17',
     'templating@1.4.3 || 1.4.4-alpha300.17',
     'mongo',
     'meteortesting:mocha@3.1.0-beta300.0',
