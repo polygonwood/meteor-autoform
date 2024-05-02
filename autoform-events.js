@@ -449,7 +449,7 @@ Template.autoForm.events({
       return
     }
 
-    const parentForm = event.target.form && event.target.closest('form')
+    const parentForm = event.target.form ?? event.target.closest('form')
     const formId = parentForm.getAttribute('id')
     const expectedId = this.id
 
