@@ -216,6 +216,13 @@ Template.registerHelper('afFieldValueContains', autoFormFieldValueContains)
  * @return {Object}
  */
 export const autoFormFieldLabelText = function autoFormFieldLabelText (options) {
+  // in some cases we want to define labels als hidden under the autoform ctx
+  // but remain visible in the overall schema ctx (so their name is shown
+  // during validation) which causes label / atts.label to be false
+  const self = this
+  if ([null, false].includes(self?.label ?? self?.atts?.label)) {
+    return null
+  }
   options = parseOptions(options, 'afFieldLabelText', true)
   return AutoForm.getLabelForField(options.name)
 }

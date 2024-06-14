@@ -450,8 +450,11 @@ Template.autoForm.events({
       return
     }
 
-    const formId = event.target.closest('form').id
-    if (formId !== this.id) return
+    const parentForm = event.target.form ?? event.target.closest('form')
+    const formId = parentForm.getAttribute('id')
+    const expectedId = this.id
+
+    if (formId !== expectedId) return
 
     // Some plugins, like jquery.inputmask, can cause infinite
     // loops by continually saying the field changed when it did not,
