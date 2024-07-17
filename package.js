@@ -4,7 +4,7 @@ Package.describe({
   summary:
     'Easily create forms with automatic insert and update, and automatic reactive validation.',
   git: 'https://github.com/aldeed/meteor-autoform.git',
-  version: '8.0.0-rc.1'
+  version: '8.0.0-rc.3'
 })
 
 Npm.depends({
@@ -12,7 +12,7 @@ Npm.depends({
 })
 
 Package.onUse(function (api) {
-  api.versionsFrom(['2.8.0', '3.0-rc.0'])
+  api.versionsFrom(['3.0.1'])
 
   // Dependencies
   api.use([
@@ -22,17 +22,17 @@ Package.onUse(function (api) {
     'random',
     'ecmascript',
     'mongo',
-    'blaze@2.9.0 || 3.0.0-alpha300.17',
-    'templating@1.4.3 || 1.4.4-alpha300.17',
-    'jquery@3.0.0 || 3.0.1-alpha300.19'
+    'blaze@3.0.0',
+    'templating@1.4.4',
+    'jquery@3.0.0'
   ])
 
   api.use(
     [
       'momentjs:moment@2.30.1',
       'mrt:moment-timezone@0.2.1',
-      'aldeed:collection2@4.0.0',
-      'aldeed:simple-schema@2.0.0-beta300.0',
+      'aldeed:collection2@4.0.3',
+      'aldeed:simple-schema@2.0.0-rc.300.10',
       'aldeed:moment-timezone@0.4.0',
       'reload'
     ],
@@ -61,24 +61,24 @@ Package.onUse(function (api) {
 })
 
 Package.onTest(function (api) {
-  api.versionsFrom(['2.8.0', '3.0-rc.0'])
+  api.versionsFrom(['2.8.0', '3.0-rc.4'])
   // Running the tests requires a dummy project in order to
   // resolve npm dependencies and the test env dependencies.
   api.use([
     'ecmascript',
     'random',
     'tracker',
-    'blaze@2.9.0 || 3.0.0-alpha300.17',
-    'templating@1.4.3 || 1.4.4-alpha300.17',
     'mongo',
-    'meteortesting:mocha@3.1.0-beta300.0',
-    'aldeed:collection2@4.0.2-beta.1',
+    'blaze@3.0.0',
+    'templating@1.4.4',
+    'meteortesting:mocha@3.0.0-rc.1',
+    'aldeed:collection2@4.0.3',
     'momentjs:moment@2.30.1'
   ])
   api.use([
-    'aldeed:autoform@8.0.0-rc.1',
+    'aldeed:autoform@8.0.0-rc.2',
     'aldeed:moment-timezone',
-    'aldeed:simple-schema@2.0.0-beta300.0'
+    'aldeed:simple-schema@2.0.0-rc.300.10',
   ], 'client')
 
   api.addFiles([
