@@ -8,13 +8,13 @@ import { Utility } from './utility'
  * items from the database once the form is submitted.
  */
 
-export class ArrayTracker{
+export class ArrayTracker {
   constructor () {
     const self = this
     self.info = {}
   }
 
-  getMinMax(
+  getMinMax (
     ss,
     field,
     overrideMinCount,
@@ -41,20 +41,20 @@ export class ArrayTracker{
     self.info[formId] = {}
   }
 
-  getForm(formId) {
+  getForm (formId) {
     const self = this
     self.initForm(formId)
     return self.info[formId]
   }
 
-  ensureField(formId, field) {
+  ensureField (formId, field) {
     const self = this
     self.initForm(formId)
 
     if (!self.info[formId][field]) self.resetField(formId, field)
   }
 
-  initField(
+  initField (
     formId,
     field,
     ss,
@@ -104,7 +104,7 @@ export class ArrayTracker{
     self.info[formId][field].deps.changed()
   }
 
-  resetField(formId, field) {
+  resetField (formId, field) {
     const self = this
     self.initForm(formId)
 
@@ -124,7 +124,7 @@ export class ArrayTracker{
     self.info[formId][field].deps.changed()
   }
 
-  resetForm(formId) {
+  resetForm (formId) {
     const self = this
     Object.keys(self.info[formId] || {}).forEach(function (field) {
       self.resetField(formId, field)
@@ -143,35 +143,35 @@ export class ArrayTracker{
     self.info[formId] = {}
   }
 
-  tracksField(formId, field) {
+  tracksField (formId, field) {
     const self = this
     self.ensureField(formId, field)
     self.info[formId][field].deps.depend()
     return !!self.info[formId][field].array
   }
 
-  getField(formId, field) {
+  getField (formId, field) {
     const self = this
     self.ensureField(formId, field)
     self.info[formId][field].deps.depend()
     return self.info[formId][field].collection.find({})
   }
 
-  getCount(formId, field) {
+  getCount (formId, field) {
     const self = this
     self.ensureField(formId, field)
     self.info[formId][field].deps.depend()
     return self.info[formId][field].count
   }
 
-  getVisibleCount(formId, field) {
+  getVisibleCount (formId, field) {
     const self = this
     self.ensureField(formId, field)
     self.info[formId][field].deps.depend()
     return self.info[formId][field].visibleCount
   }
 
-  isFirstFieldlVisible(formId, field, currentIndex) {
+  isFirstFieldlVisible (formId, field, currentIndex) {
     const self = this
     self.ensureField(formId, field)
     self.info[formId][field].deps.depend()
@@ -183,7 +183,7 @@ export class ArrayTracker{
     return firstVisibleField && firstVisibleField.index === currentIndex
   }
 
-  isLastFieldlVisible(formId, field, currentIndex) {
+  isLastFieldlVisible (formId, field, currentIndex) {
     const self = this
     self.ensureField(formId, field)
     self.info[formId][field].deps.depend()
@@ -195,7 +195,7 @@ export class ArrayTracker{
     return lastVisibleField && lastVisibleField.index === currentIndex
   }
 
-  addOneToField(
+  addOneToField (
     formId,
     field,
     ss,
@@ -240,7 +240,7 @@ export class ArrayTracker{
     }
   }
 
-  removeFromFieldAtIndex(
+  removeFromFieldAtIndex (
     formId,
     field,
     index,
@@ -274,7 +274,7 @@ export class ArrayTracker{
 
 /* ----------------------------------------------------------------------------
  * PRIVATE
- * --------------------------------------------------------------------------*/
+ * -------------------------------------------------------------------------- */
 const createLoopCtx = function (
   formId,
   field,

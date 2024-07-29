@@ -18,6 +18,5 @@ AutoForm.reactiveFormData = new FormData()
 AutoForm._inputTypeDefinitions = {} // for storing input type definitions added by AutoForm.addInputType
 AutoForm._formTypeDefinitions = {} // for storing submit type definitions added by AutoForm.addFormType
 
-
 // Used by AutoForm._forceResetFormValues; temporary hack
 AutoForm._destroyForm = {}

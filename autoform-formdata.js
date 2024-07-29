@@ -10,6 +10,7 @@ export class FormData {
     const self = this
     self.forms = {}
   }
+
   /**
    * Initializes tracking for a given form, if not already done.
    * @param {String} formId The form's `id` attribute
@@ -35,7 +36,7 @@ export class FormData {
    * @param   {MongoObject|null}      sourceDoc The mDoc for the form or `null` if no doc.
    * @returns {MongoObject|undefined} Returns the form's MongoObject if getting.
    */
-  sourceDoc(formId, sourceDoc) {
+  sourceDoc (formId, sourceDoc) {
     const self = this
     self.initForm(formId)
 

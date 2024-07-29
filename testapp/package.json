@@ -37,7 +37,7 @@
       "deps"
     ],
     "ignore": [
-      "**/testdummy/"
+      "**/testapp/"
     ]
   },
   "eslintConfig": {

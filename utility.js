@@ -1,7 +1,7 @@
-/* global moment */
 import MongoObject from 'mongo-object'
 import { isObject } from './common'
-import { moment } from 'meteor/momentjs:moment'
+import { getMoment } from './getMoment'
+
 /**
  * @private
  * @type {RegExp}
@@ -384,6 +384,7 @@ export const Utility = {
    * Returns `true` if dateString is a "valid date string"
    */
   isValidDateString: function isValidDateString (dateString) {
+    const moment = getMoment(true)
     const m = moment(dateString, 'YYYY-MM-DD', true)
     return m && m.isValid()
   },

@@ -1,5 +1,5 @@
 /* eslint-env mocha */
-/* global moment Package */
+/* global Package */
 import { Random } from 'meteor/random'
 import { expect } from 'chai'
 import { Mongo } from 'meteor/mongo'

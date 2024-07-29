@@ -22,3 +22,4 @@ aldeed:autoform@8.0.0-rc.1
 communitypackages:autoform-bootstrap5@2.0.0-rc.0
 momentjs:moment
 aldeed:simple-schema@2.0.0-beta300.0!
+meteor/momentjs:moment

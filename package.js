@@ -4,7 +4,7 @@ Package.describe({
   summary:
     'Easily create forms with automatic insert and update, and automatic reactive validation.',
   git: 'https://github.com/aldeed/meteor-autoform.git',
-  version: '8.0.0-rc.3'
+  version: '8.0.0-rc.4'
 })
 
 Npm.depends({
@@ -72,13 +72,15 @@ Package.onTest(function (api) {
     'blaze@3.0.0',
     'templating@1.4.4',
     'meteortesting:mocha@3.0.0-rc.1',
-    'aldeed:collection2@4.0.3',
-    'momentjs:moment@2.30.1'
+    'aldeed:collection2@4.0.3'
   ])
+  api.use([
+    'momentjs:moment@2.30.1'
+  ], 'client', { weak: true })
   api.use([
     'aldeed:autoform@8.0.0-rc.2',
     'aldeed:moment-timezone',
-    'aldeed:simple-schema@2.0.0-rc.300.10',
+    'aldeed:simple-schema@2.0.0-rc.300.10'
   ], 'client')
 
   api.addFiles([
@@ -97,5 +99,5 @@ Package.onTest(function (api) {
     'tests/components/quickForm/quickFormUtils.tests.js',
     // input types
     'tests/inputTypes/value-converters.tests.js'
-  ], 'client');
+  ], 'client')
 })
