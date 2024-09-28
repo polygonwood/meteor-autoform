@@ -18,7 +18,7 @@ typescript@5.4.3              # Enable TypeScript syntax in .ts and .tsx modules
 shell-server@0.6.0            # Server-side component of the `meteor shell` command
 
 blaze-html-templates
-aldeed:autoform@8.0.0-rc.1
+aldeed:autoform@8.0.0-rc.5
 communitypackages:autoform-bootstrap5@2.0.0-rc.0
 momentjs:moment
 aldeed:simple-schema@2.0.0-beta300.0!

@@ -12,7 +12,7 @@ Npm.depends({
 })
 
 Package.onUse(function (api) {
-  api.versionsFrom(['3.0.1'])
+  api.versionsFrom(['3.0.3'])
 
   // Dependencies
   api.use([
@@ -61,7 +61,7 @@ Package.onUse(function (api) {
 })
 
 Package.onTest(function (api) {
-  api.versionsFrom(['2.8.0', '3.0-rc.4'])
+  api.versionsFrom(['2.8.0', '3.0.3'])
   // Running the tests requires a dummy project in order to
   // resolve npm dependencies and the test env dependencies.
   api.use([
@@ -78,7 +78,7 @@ Package.onTest(function (api) {
     'momentjs:moment@2.30.1'
   ], 'client', { weak: true })
   api.use([
-    'aldeed:autoform@8.0.0-rc.2',
+    'aldeed:autoform@8.0.0-rc.5',
     'aldeed:moment-timezone',
     'aldeed:simple-schema@2.0.0-rc.300.10'
   ], 'client')
